@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/622b430d00.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <section id="menu">
+        <div class="logo">
+            <img src="./logo.jpg" alt="">
+            <h2>MENU</h2>
+        </div>
+        <div class="items">
+            <li><i class="fa-solid fa-user"></i><a href="#">Profile</a></li>
+            <li><i class="fa-solid fa-bars"></i><a href="#">Dashboard</a></li>
+            <li><i class="fa-solid fa-book"></i><a href="#">E-Book</a></li>
+            <li><i class="fa-regular fa-calendar-days"></i><a href="#">Events and Programs</a></li>
+            <li><i class="fa-solid fa-newspaper"></i><a href="#">News and Updates</a></li>
+            <li><i class="fa-solid fa-comments"></i><a href="#">Support and FAQs</a></li>
+            <li><i class="fa-solid fa-address-book"></i><a href="#">Contact</a></li>
+        </div>
+    </section>
+    <section id="interface">
+        <h3 class="i-name">
+            LIBRARY MANAGEMENT
+        </h3>
+        <h3 class="i-name" id="book-count">Books Count: 21</h3>
+        <div class="board">
+            <div class="filters">
+                <label for="author-filter">Filter by Author:</label>
+                <select id="author-filter" onchange="filterTable('author')">
+                    <option value="">All</option>
+                    <option value="P K Nag">P K Nag</option>
+                    <option value="James Patterson">James Patterson</option>
+                    <option value="R K Bansal">R K Bansal</option>
+                    <option value="Richard Bent">Richard Bent</option>
+                    <option value="John William">John William</option>
+                </select>
+                
+                <label for="bookname-filter">Filter by Book Name:</label>
+                <select size="1" id="bookname-filter" onchange="filterTable('bookname')">
+                    <option value="">All</option>
+                    <option value="Thermodynamics">Thermodynamics</option>
+                    <option value="Advanced Kinetics">Advanced Kinetics</option>
+                    <option value="Kinematics of Machinery">Kinematics of Machinery</option>
+                    <option value="HMT">HMT</option>
+                    <option value="Strength of Materials">Strength of Materials</option>
+                    <option value="Engineering Mechanics">Engineering Mechanics</option>
+                    <option value="Applied Mechanics">Applied Mechanics</option>
+                    <option value="Gas Dynamics">Gas Dynamics</option>
+                    <option value="Operational Research">Operational Research</option>
+                    <option value="Composite Materials">Composite Materials</option>
+                    <option value="Embedded Systems">Embedded Systems</option>
+                    <option value="Circuit Designing">Circuit Designing</option>
+                    <option value="Power Electronics">Power Electronics</option>
+                    <option value="Electrical Machines">Electrical Machines</option>
+                    <option value="Signals and Systems">Signals and Systems</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Artificial Intelligence">Artificial Intelligence</option>
+                    <option value="Java">Java</option>
+                    <option value="Machine Learning">Machine Learning</option>
+                    <option value="UI UX">UI UX</option>
+                </select>
+                
+                <label for="status-filter">Filter by Status:</label>
+                <select id="status-filter" onchange="filterTable('status')">
+                    <option value="">All</option>
+                    <option value="Available">Available</option>
+                    <option value="No">Not Available</option>
+                </select>
+                
+                <label for="domain-filter">Filter by Domain:</label>
+                <select id="domain-filter" onchange="filterTable('domain')">
+                    <option value="">All</option>
+                    <option value="Mechanical">Mechanical</option>
+                    <option value="Electrical">Electrical</option>
+                    <option value="Computer Science">Computer Science</option>
+                    <!-- Add more options for different domains -->
+                </select>
+                
+                <label for="year-filter">Filter by Published Year:</label>
+                <input type="number" id="year-filter" min="1900" max="2099" oninput="filterTable('year')">
+            
+            </div>
+            <table width="100%"  id="book-table">
+                <thead>
+                    <tr>
+                        <td>Author</td>
+                        <td>Book Name</td>
+                        <td>Status</td>
+                        <td>Domain</td>
+                        <td>Published Year</td>
+                    </tr>
+                </thead>
+                <tbody>
+
+                    <tr>
+                        <td class="author">P K Nag</td>
+                        <td class="bookname">Thermodynamics</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Mechanical</td>
+                        <td class="year">1987</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">James Patterson</td>
+                        <td class="bookname">Advanced Kinetics</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Mechanical</td>
+                        <td class="year">1980</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">Richard Bent</td>
+                        <td class="bookname">Kinematics of Machinery</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Mechanical</td>
+                        <td class="year">1977</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">R K Bansal</td>
+                        <td class="bookname">HMT</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Mechanical</td>
+                        <td class="year">1985</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">John William</td>
+                        <td class="bookname">Strength of Materials</td>
+                        <td class="status">No</td>
+                        <td class="domain">Mechanical</td>
+                        <td class="year">1985</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">P K Nag</td>
+                        <td class="bookname">Engineering Mechanics</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Mechanical</td>
+                        <td class="year">1987</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">James Patterson</td>
+                        <td class="bookname">Applied Mechanics</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Mechanical</td>
+                        <td class="year">1980</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">Richard Bent</td>
+                        <td class="bookname">Gas Dynamics</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Mechanical</td>
+                        <td class="year">1977</td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="author">R K Bansal</td>
+                        <td class="bookname">Operational Research</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Mechanical</td>
+                        <td class="year">1977</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">John William</td>
+                        <td class="bookname">Composite Materials</td>
+                        <td class="status">No</td>
+                        <td class="domain">Mechanical</td>
+                        <td class="year">1985</td>
+                    </tr>
+                    <tr>
+                        <td class="author">P K Nag</td>
+                        <td class="bookname">Embedded Systems</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Electrical</td>
+                        <td class="year">1985</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">Siva</td>
+                        <td class="bookname">Thermodynamics</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Mechanical</td>
+                        <td class="year">2022</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">James Patterson</td>
+                        <td class="bookname">Circuit Designing</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Electrical</td>
+                        <td class="year">1977</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">Richard Bent</td>
+                        <td class="bookname">Power Electronics</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Electrical</td>
+                        <td class="year">1980</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">R K Bansal</td>
+                        <td class="bookname">Electrical Machines</td>
+                        <td class="status">No</td>
+                        <td class="domain">Electrical</td>
+                        <td class="year">1987</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">John William</td>
+                        <td class="bookname">Signals and Systems</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Electrical</td>
+                        <td class="year">1985</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">P K Nag</td>
+                        <td class="bookname">Data Science</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Computer Science</td>
+                        <td class="year">1985</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">James Patterson</td>
+                        <td class="bookname">Artificial Intelligence</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Computer Science</td>
+                        <td class="year">1977</td>
+                    </tr>
+
+
+                    <tr>
+                        <td class="author">Richard Patterson</td>
+                        <td class="bookname">Java</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Computer Science</td>
+                        <td class="year">1980</td>
+                    </tr>
+
+                    <tr>
+                        <td class="author">R K Bansal</td>
+                        <td class="bookname">Machine Learning</td>
+                        <td class="status">No</td>
+                        <td class="domain">Computer Science</td>
+                        <td class="year">1987</td>
+                    </tr>
+                    <tr>
+                        <td class="author">John William</td>
+                        <td class="bookname">UI UX</td>
+                        <td class="status">Available</td>
+                        <td class="domain">Computer Science</td>
+                        <td class="year">1987</td>
+                    </tr>
+                    
+                </tbody>
+            </table>
+
+            <div id="pagination" class="pagination"></div>
+        </div>
+
+
+        <script>
+            const itemsPerPage = 10; // Number of items to display per page
+            let currentPage = 1; // Current page
+    
+            function showPage(pageNumber) {
+                const table = document.getElementById("book-table");
+                const rows = table.getElementsByTagName("tr");
+                const totalPages = Math.ceil(rows.length / itemsPerPage);
+    
+                currentPage = pageNumber < 1 ? 1 : pageNumber > totalPages ? totalPages : pageNumber;
+                const startIndex = (currentPage - 1) * itemsPerPage;
+                const endIndex = startIndex + itemsPerPage;
+    
+                for (let i = 1; i < rows.length; i++) {
+                    rows[i].style.display = (i >= startIndex && i < endIndex) ? "" : "none";
+                }
+    
+                renderPagination(totalPages, currentPage);
+            }
+    
+            function renderPagination(totalPages, currentPage) {
+                const pagination = document.getElementById("pagination");
+                pagination.innerHTML = "";
+    
+                for (let i = 1; i <= totalPages; i++) {
+                    const pageButton = document.createElement("button");
+                    pageButton.textContent = i;
+                    pageButton.classList.add("page-button");
+                    if (i === currentPage) {
+                        pageButton.classList.add("active");
+                    }
+                    pageButton.addEventListener("click", () => showPage(i));
+                    pagination.appendChild(pageButton);
+                }
+            }
+    
+            function filterTable(column) {
+                const filter = getColumnFilterValue(column);
+                const table = document.getElementById("book-table");
+                const rows = table.getElementsByTagName("tr");
+                let bookCount = 0;
+    
+                for (let i = 1; i < rows.length; i++) {
+                    const cell = rows[i].querySelector("." + column);
+                    if (cell) {
+                        const cellValue = cell.textContent.toLowerCase();
+                        if (filter === "" || cellValue.includes(filter.toLowerCase())) {
+                            rows[i].style.display = "";
+                            bookCount++;
+                        } else {
+                            rows[i].style.display = "none";
+                        }
+                    }
+                }
+    
+                // Update the book count element
+                const bookCountElement = document.getElementById("book-count");
+                if (bookCountElement) {
+                    bookCountElement.textContent = `Books Count: ${bookCount}`;
+                }
+            }
+    
+            function getColumnFilterValue(column) {
+                const filterElement = document.getElementById(column + "-filter");
+                if (filterElement.tagName === "SELECT") {
+                    return filterElement.value;
+                } else {
+                    return filterElement.value;
+                }
+            }
+    
+            // Initial page load
+            document.addEventListener("DOMContentLoaded", () => {
+                showPage(1);
+            });
+        </script>
+
+
+    </section>
+
+
+</body>
+
+</html>
